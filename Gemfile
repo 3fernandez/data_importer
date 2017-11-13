@@ -16,6 +16,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'omniauth-github'
+gem 'bootstrap-sass'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'

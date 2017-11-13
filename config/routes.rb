@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :purchases
   devise_for :users, controllers: { omniauth_callbacks: "callbacks" }
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  authenticated :user do
+    root 'purchase#index', as: :authenticated_root
+  end
+
+  resources :purchases
+
+  root 'home#index'
 end
