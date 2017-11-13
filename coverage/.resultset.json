@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/3f/repos/data_importer/spec/models/user_spec.rb": [
+      "/Users/3f/repos/data_importer/spec/models/purchase_spec.rb": [
         1,
         null,
         1,
@@ -77,8 +77,20 @@
       "/Users/3f/repos/data_importer/app/helpers/application_helper.rb": [
         1,
         null
+      ],
+      "/Users/3f/repos/data_importer/app/models/purchase.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/3f/repos/data_importer/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1510573990
+    "timestamp": 1510576005
   }
 }
