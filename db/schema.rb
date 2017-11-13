@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113120952) do
+ActiveRecord::Schema.define(version: 20171113181734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "line_items", force: :cascade do |t|
+    t.bigint "purchase_id"
+    t.string "purchaser_name"
+    t.string "item_description"
+    t.decimal "item_price", precision: 5, scale: 2
+    t.integer "purchase_count"
+    t.string "merchant_address"
+    t.string "merchant_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["purchase_id"], name: "index_line_items_on_purchase_id"
+  end
 
   create_table "purchases", force: :cascade do |t|
     t.decimal "total", precision: 5, scale: 2
@@ -43,5 +56,6 @@ ActiveRecord::Schema.define(version: 20171113120952) do
     t.index ["uid"], name: "index_users_on_uid"
   end
 
+  add_foreign_key "line_items", "purchases"
   add_foreign_key "purchases", "users"
 end
